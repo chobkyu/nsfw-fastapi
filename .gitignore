@@ -1,0 +1,9 @@
+# venv 폴더
+venv/
+
+# 모델 파일 (모델이 저장된 경로에 맞게 수정)
+nsfw_image_detection/
+
+# 기타 불필요한 파일들
+*.pyc
+__pycache__/
