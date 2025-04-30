@@ -8,10 +8,13 @@ from io import BytesIO
 
 app = FastAPI()
 
+device = torch.device("cpu")
+
 # 모델 로딩
 model_path = './nsfw_image_detection'
 extractor = AutoFeatureExtractor.from_pretrained(model_path)
 model = AutoModelForImageClassification.from_pretrained(model_path)
+model = model.to(device)
 
 class ImageRequest(BaseModel):
     image_url: str
